@@ -1,3 +1,4 @@
+import * as telnyx from "./telnyx";
 import * as nexmo from "./nexmo";
 import * as twilio from "./twilio";
 import * as fakeservice from "./fakeservice";
@@ -9,9 +10,9 @@ export const serviceMap = {
   bandwidth,
   nexmo,
   twilio,
-  fakeservice
+  fakeservice,
+  telnyx
 };
-
 export const addServerEndpoints = (app, adders) => {
   Object.keys(serviceMap).forEach(serviceName => {
     const serviceAddServerEndpoints = exports.tryGetFunctionFromService(
